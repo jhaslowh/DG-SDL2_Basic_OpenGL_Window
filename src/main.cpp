@@ -67,16 +67,16 @@ void onUpdate(){
 
 	// Do main updates if window is visible 
 	if (WINDOW_VISIBLE){
-
-		sprite.setRotation(sprite.getRotation() + 1.0f);
-		cube.setRotationX(cube.getRotationX() + 1.0f);
-		cube.setRotationY(cube.getRotationY() + 1.0f);
-
 		// Update input 
 		// Note: this does not actually grab the input, but
 		// runs helper code nessesary for it to work correctly. 
 		mMouseH.update();
 		mKeyH.update(deltaTime);
+
+
+		sprite.setRotation(sprite.getRotation() + 1.0f);
+		cube.setRotationX(cube.getRotationX() + 1.0f);
+		cube.setRotationY(cube.getRotationY() + 1.0f);
 	}
 }
 
@@ -209,14 +209,6 @@ void createGame(){
 	window = SDL_CreateWindow("GLSL Example", 40, 40, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_OPENGL);
 	// Create the window context 
 	SDL_GLContext context = SDL_GL_CreateContext(window);
-
-	/// Set window icon 
-	/*SDL_Surface* icon = SDL_LoadBMP("icon.bmp");
-	// Remove icon background 
-	SDL_SetColorKey(icon, SDL_TRUE, SDL_MapRGB(icon->format,0,0,0)); 
-	SDL_SetWindowIcon(window,icon);
-	// Free icon resources 
-	if (icon) SDL_FreeSurface(icon);*/
 
 	// OpenGL Extension wrangler initialising  
 	glewExperimental = GL_TRUE; 

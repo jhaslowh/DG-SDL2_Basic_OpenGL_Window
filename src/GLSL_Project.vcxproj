@@ -11,20 +11,20 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="KeyHandler.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="Cube.h" />
     <ClInclude Include="FileHelper.h" />
     <ClInclude Include="GLHandler.h" />
-    <ClInclude Include="KeyHandler.h" />
     <ClInclude Include="MouseHandler.h" />
     <ClInclude Include="Sprite.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cube.cpp" />
     <ClCompile Include="FileHelper.cpp" />
+    <ClCompile Include="KeyHandler.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="GLHandler.cpp" />
-    <ClCompile Include="KeyHandler.cpp" />
     <ClCompile Include="MouseHandler.cpp" />
     <ClCompile Include="Sprite.cpp" />
   </ItemGroup>

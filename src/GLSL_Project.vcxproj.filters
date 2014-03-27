@@ -45,14 +45,14 @@
     <ClInclude Include="FileHelper.h">
       <Filter>Header Files\io</Filter>
     </ClInclude>
-    <ClInclude Include="KeyHandler.h">
-      <Filter>Header Files\io</Filter>
+    <ClInclude Include="main.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MouseHandler.h">
       <Filter>Header Files\io</Filter>
     </ClInclude>
-    <ClInclude Include="main.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="KeyHandler.h">
+      <Filter>Header Files\io</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -68,13 +68,13 @@
     <ClCompile Include="Sprite.cpp">
       <Filter>Source Files\geom</Filter>
     </ClCompile>
-    <ClCompile Include="KeyHandler.cpp">
-      <Filter>Source Files\io</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MouseHandler.cpp">
+      <Filter>Source Files\io</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyHandler.cpp">
       <Filter>Source Files\io</Filter>
     </ClCompile>
   </ItemGroup>

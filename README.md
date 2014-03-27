@@ -20,6 +20,7 @@ Technical Information
 * 3D Cube
 * Matrix Transforms (Using GLM) 
 * Basic Game Loop
+* Basic Keyboard and Mouse wrappers
 
 ### Libraries
 
