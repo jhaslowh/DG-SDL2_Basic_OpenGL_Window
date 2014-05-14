@@ -15,7 +15,10 @@ int init_resources()
 	printf("Loading Resources...\n");
 
 	// Set up shaders 
-	mgl.load(SCREEN_WIDTH, SCREEN_HEIGHT);
+	if (mgl.load(SCREEN_WIDTH, SCREEN_HEIGHT) == 0){
+		cout << "Error setting up OpenGL\n";
+		return 0;
+	}
 	glUseProgram(mgl.program);
 	// Setup ortho matrix
 	mgl.setOrthoMatrix(SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -43,6 +46,9 @@ int init_resources()
 void free_resources()
 {
 	printf("Free Resources...\n");
+
+	// Wait for update thread to finish
+	SDL_WaitThread(thread, NULL);
 
 	// Unload program
 	glUseProgram(0);
@@ -205,6 +211,14 @@ void createGame(){
 	// ======= Setup ======= //
 	// Setup SDL
 	SDL_Init(SDL_INIT_VIDEO);
+
+	// Get display settings 
+	SDL_DisplayMode current;
+    if(SDL_GetDesktopDisplayMode(0, &current) == 0)
+        printf("Display #%d: current display mode is %dx%dpx @ %dhz. \n", 0, current.w, current.h, current.refresh_rate);
+	else 
+	    cout << "ERROR: " << SDL_GetError() << "\n";
+
 	// Create Window 
 	window = SDL_CreateWindow("GLSL Example", 40, 40, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_OPENGL);
 	// Create the window context 
@@ -233,16 +247,16 @@ void createGame(){
 	cout << "GLSL Version: " << glGetString(GL_SHADING_LANGUAGE_VERSION) << "\n";
 	
 	// Load resources 
-	init_resources();
-	
-	// ======= Run ======= //
+	if (init_resources() == 1){
+		// ======= Run ======= //
 
-	// Create game loop thread 
-	running = true;
-	thread = SDL_CreateThread( gameLoop, "gameLoop", (void *)NULL);
+		// Create game loop thread 
+		running = true;
+		thread = SDL_CreateThread( gameLoop, "gameLoop", (void *)NULL);
 
-	// Run Event and render loop 
-	eventAndRenderLoop();
+		// Run Event and render loop 
+		eventAndRenderLoop();
+	}
 	
 	// ======= Exit ======= //
 
