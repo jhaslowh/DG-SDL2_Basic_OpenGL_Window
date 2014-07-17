@@ -4,11 +4,14 @@ SLD 2 Basic OpenGL 2.0+ Window
 About
 -----
 
-The project in this repo shows how to setup a SDL 2 window that uses OpenGL 2.0+ with shaders. A basic sprite and 3D cube should be rendered to the screen when the program is run. A basic game loop is implemented as an example, but can be removed if not desired.   
+The project in this repo shows how to setup a SDL 2 window that uses OpenGL 2.0+ with shaders. A basic 2D sprite and 3D cube should be rendered to the screen when the program is run. A basic game loop is implemented as an example, but can be removed if not desired.   
 
 This is also the same project used during my GLSL presentation.  
 
-All libraries and headers that are required are included for ease of use so that they do not need to be found individually. 
+All libraries and headers that are required are included for ease of use so that they do not need to be found individually. If you are running this on Linux, the libraries might need to be found or recompiled for compatibility reasons.  
+
+What it should look like  
+![Example](/example_pic.png)
 
 
 Building / Running
