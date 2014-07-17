@@ -20,8 +20,8 @@ int GLHandler::load(float screen_width, float screen_height){
 	GLuint vs = glCreateShader(GL_VERTEX_SHADER);
 	const char *vs_source = 
     "#version 120  \n"  // OpenGL 2.1
-	"in vec4 position;        " // Position handle 
-	"in vec2 aTexCoordinate;  " // Texture coord handle 
+	"attribute vec4 position;        " // Position handle 
+	"attribute vec2 aTexCoordinate;  " // Texture coord handle 
 	"varying vec2 vTexCoordinate;    " // Texture coord handle that both shaders use 
 	"uniform mat4 modelm;            " // Model Matrix handle
 	"uniform mat4 viewm;             " // View Matrix handle
